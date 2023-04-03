@@ -7,7 +7,7 @@ class Local(Destination):
     directory: str
 
     def __init__(self, directory: str):
-        self.directory = f"{os.getenv('OUTPUT_DIRECTORY')}{directory}"
+        self.directory = f"{os.getenv('OUTPUT_DIRECTORY')}/{directory}"
 
         if not os.path.exists(self.directory):
             os.makedirs(self.directory)

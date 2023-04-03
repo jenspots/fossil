@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  fossil:
+    container_name: fossil
+    restart: always
+    hostname: fossil
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - OUTPUT_DIRECTORY=/fossil
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '$HOME/fossil:/fossil'
