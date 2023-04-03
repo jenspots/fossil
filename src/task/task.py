@@ -1,4 +1,6 @@
 import schedule
+from loguru import logger
+
 from src.destination import Destination
 
 
@@ -14,6 +16,8 @@ class Task:
     @staticmethod
     def from_container(container) -> "Task":
         from src.task.command import Command
+
+        logger.info(f"New container: {container.name}")
 
         destination = Destination.from_container(container)
         task = Command(container, destination)

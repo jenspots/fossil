@@ -1,9 +1,15 @@
 from . import Task
 from loguru import logger
 
+from ..destination import Destination
+
 
 class Command(Task):
-    command = "pg_dump gsr -U gsr"
+    command: str
+
+    def __init__(self, container, destination: Destination):
+        super().__init__(container, destination)
+        self.command = container.labels["fossil.dump.command"]
 
     def run(self):
         logger.info(f"{self.name}")

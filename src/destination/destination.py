@@ -6,4 +6,5 @@ class Destination:
     def from_container(container) -> "Destination":
         from src.destination.local import Local
 
-        return Local(directory=f"{container.name}/")
+        path = container.labels["fossil.dump.destination.local"]
+        return Local(container.name, path)
