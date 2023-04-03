@@ -1,4 +1,4 @@
-from src.destination.destination import Destination
+from . import Destination
 
 
 class S3(Destination):

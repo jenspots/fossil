@@ -2,7 +2,7 @@ import docker
 from dotenv import load_dotenv
 import time
 import schedule
-from src.task import Task
+from task import Task
 
 
 if __name__ == "__main__":

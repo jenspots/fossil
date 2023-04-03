@@ -1,4 +1,4 @@
-from src.task import Task
+from . import Task
 from loguru import logger
 
 

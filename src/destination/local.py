@@ -1,6 +1,6 @@
 import os
 from datetime import datetime
-from src.destination.destination import Destination
+from . import Destination
 
 
 class Local(Destination):
