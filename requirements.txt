@@ -1,5 +1,4 @@
 docker
 python-dotenv
 paramiko
-schedule
 loguru

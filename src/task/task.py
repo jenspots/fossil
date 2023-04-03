@@ -1,4 +1,3 @@
-import schedule
 from docker.models.containers import Container
 from loguru import logger
 
@@ -22,7 +21,6 @@ class Task:
 
         destination = Destination.from_container(container)
         task = Command(container, destination)
-        schedule.every(5).seconds.do(task.run)
         return task
 
     def run(self):
